@@ -1,2 +1,2 @@
-#link
+LINK
 tindog-tomas.netlify.app
