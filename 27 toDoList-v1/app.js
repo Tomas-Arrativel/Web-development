@@ -5,30 +5,31 @@ const express = require('express');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 app.set('view engine', 'ejs');
 
+let tasks = ['Drink water', 'Eat healthy'];
+
 app.get('/', (req, res) => {
-  const days = [
-    'Domingo',
-    'Lunes',
-    'Martes',
-    'Miercoles',
-    'Jueves',
-    'Viernes',
-    'Sabado',
-  ];
+  const options = {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  };
+
   const today = new Date();
-  const curDay = today.getDay();
 
-  var day = ``;
+  const day = today.toLocaleDateString('en-US', options);
 
-  if (today.getDay === 6 || today.getDay === 0) {
-    day = `weekend: ${days[curDay]}`;
-  } else {
-    day = `weekday: ${days[curDay]}`;
-  }
+  res.render('list', { kindOfDay: day, newTasks: tasks });
+});
 
-  res.render('list', { kindOfDay: day });
+app.post('/', (req, res) => {
+  let task = req.body.newTask;
+  tasks.push(task);
+  res.redirect('/');
 });
 
 app.listen(3000, () => {
