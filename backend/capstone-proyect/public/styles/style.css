@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #097990;
+  padding: 20px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+}
+form input {
+  border: none;
+  background-color: #008eab;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+form input::placeholder {
+  color: #d4d4d4;
+}
+
+form button {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 900;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  background-color: #6dc1d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.item input {
+  margin-right: 10px;
+}
+.item label {
+  font-size: 1.1rem;
+}
+
+.item input:checked + label {
+  text-decoration: line-through;
+  text-decoration-color: #0b9ebb;
+  text-decoration-thickness: 2px;
+}

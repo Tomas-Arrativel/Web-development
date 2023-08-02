@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <form action="/" method="post">
+          <input
+            type="text"
+            placeholder="Type your item"
+            required
+            name="item"
+          />
+          <button type="submit">+</button>
+        </form>
+
+        <% for (const item of locals.items) { %>
+        <div class="item">
+          <input type="checkbox" id="box" />
+          <label for="box"><%= item %></label>
+        </div>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
