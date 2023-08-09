@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem picsum</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        min-height: 20vh;
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      form input,
+      form label {
+        margin-bottom: 15px;
+      }
+      form button {
+        background-color: bisque;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lorem Picsum</h1>
+      <form action="img" method="post">
+        <div class="option">
+          <label for="blur">Blur between 0 & 10:</label>
+          <input type="number" name="blur" min="0" max="10" />
+        </div>
+        <div class="option">
+          <label for="grayscale">Grayscale</label>
+          <input type="checkbox" name="grayscale" />
+        </div>
+        <button type="submit">Create</button>
+      </form>
+      <% if(locals.img) { %>
+      <div class="img-container">
+        <img src=<%=img%> alt="" />
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
