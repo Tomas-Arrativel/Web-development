@@ -1,1 +1,1 @@
-Learning to use mongoo
+Learning to use mongo
